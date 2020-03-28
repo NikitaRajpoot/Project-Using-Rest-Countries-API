@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../PythonWeb/bootstrap/css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+      <table class="table table-info">
+          <thead class="thead-dark">
+              <tr>
+                  <!-- <th>Index</th> -->
+                  <th>Country Name</th>
+                  <th>Capital</th>
+                  <th>Population</th>
+                  <th>Borders</th>
+                  <th>Flag</th>
+              </tr>
+            </thead>
+<tbody id="abcd"></tbody>
+ </table>
+</div>
+</div>
+</div>
+<script>
+    var con = [
+{
+name:'India',
+capital:'New Delhi',
+population:'1295210000',
+borders:["AFG","BGD","BTN","MMR","CHN","NPL","PAK","LKA"],
+flag:'https://restcountries.eu/data/ind.svg',
+},
+{
+name:'Afghanistan',
+capital:'Kabul',
+population:'27657145',
+borders:["IRN","PAK","TKM","UZB","TJK","CHN"],
+flag:'https://restcountries.eu/data/afg.svg',
+},
+{
+name:'Pakistan',
+capital:'Islamabad',
+population:'194125062',
+borders:["AFG","CHN","IND","IRN"],
+flag:'https://restcountries.eu/data/pak.svg',
+},
+{
+name:'China',
+capital:'Beijing',
+population:'1377422166',
+borders:["AFG","BTN","MMR","HKG","IND","KAZ","PRK","KGZ","LAO","MAC","MNG","PAK","RUS","TJK","VNM"],
+flag:'https://restcountries.eu/data/chn.svg',
+},
+]
+</script>
+<script>
+    //for(i in con);
+    ab="";
+    for(i in con){
+        //alert(con[i].capital);
+        
+        ab+="<tr>";
+        // ab+="<td>"+i+"</td>"
+        ab+="<td>"+con[i].name+"</td>"
+        ab+="<td>"+con[i].capital+"</td>"
+        ab+="<td>"+con[i].population+"</td>"
+        ab+="<td><select class='form-control'>";
+      
+        for(b in con[i].borders){
+            // ab+="<li>"+con[i].borders[b]+"</li?>"
+            ab+="<option>"+con[i].borders[b]+"</option>"
+
+        }
+        ab+="</select></td>";
+
+        ab+="<td><img src='"+con[i].flag+"' height='100'></td>"
+        ab+="<tr>";
+    }
+    document.getElementById("abcd").innerHTML = ab;
+
+</script>
+</body>
+</html>
